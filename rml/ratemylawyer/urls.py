@@ -1,6 +1,9 @@
 from django.urls import path
-from ratemylawyer import main
+from . import views
+
+
 
 urlpatterns = [
+    # main/
     path('', main, name="main")
 ]
