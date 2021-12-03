@@ -14,6 +14,7 @@ class Lawyer(models.Model):
     #image = models.ImageField(upload_to='images/')
     website = models.URLField(max_length=200)
     #guests = models.ManyToManyField(Guests, blank=True)
+    specialty = models.ManyToManyField('Specialty', blank=True)
     
     def __str__(self):
         return self.name
