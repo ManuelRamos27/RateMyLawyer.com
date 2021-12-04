@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     # main/
     path('', views.main, name="main"),
+    path('contact/', views.contact, name="contact"),
     
 
 ]
