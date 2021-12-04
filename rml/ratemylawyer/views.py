@@ -7,4 +7,5 @@ from django.shortcuts import render
 #         return render(request = request,
 #                     template_name = 'main.html')# def rate
 def main(request):
-    return render(request, 'main.html', {})
+    return render(request, 'main.html')
+     
