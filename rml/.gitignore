@@ -126,6 +126,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+../env/
 
 # Spyder project settings
 .spyderproject
@@ -150,6 +151,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+ratemylawyer/migrations/__pycache__/__init__.cpython-38.pyc
 
 ### macOS ###
 # General
