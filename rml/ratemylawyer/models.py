@@ -23,3 +23,4 @@ class Lawyer(models.Model):
 class Specialty(models.Model):
     specialty_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
+    
