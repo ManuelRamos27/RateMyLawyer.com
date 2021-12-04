@@ -1,1 +1,29 @@
-<h1><center>RateMyLawyer </center></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratemylawyer</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {%block content%}
+    
+    <center>
+    <h1>Rate My Lawyer</h1>
+    <p>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/browse">Browse Reviews</a>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/create">Create Review</a>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/contact">Contact</a>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/media">Media</a>
+    </p>
+    <br><br>
+
+    <br><br><br>
+    Copyright (c) {{ current_year }} Ratemylawyer.com
+</center>
+{% endblock %}
+</body>
+</html>
