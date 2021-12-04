@@ -40,3 +40,6 @@ def create(request, post_id):
      
 def contact(request):
     return render(request, 'contact.html')
+
+def edit(request):
+    return render(request, 'edit.html')
