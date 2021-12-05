@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.urls import reverse
+from datetime import datetime
+
 
 # Create your views here.
 
@@ -8,7 +12,9 @@ from django.shortcuts import render
 #                     template_name = 'main.html')
 # >>>>>>> main
 def main(request):
-    return render(request, 'main.html')
+     now = datetime.now()
+     current_year = now.year
+     return render(request, 'main.html',{'current_year': current_year})
      
      
 def contact(request):
