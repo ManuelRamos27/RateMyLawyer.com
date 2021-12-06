@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Lawyer
+from django.http import HttpResponseRedirect
 from django.urls import reverse
-from datetime import datetime
+from .forms import EditorForm
+
 
 
 # Create your views here.
@@ -12,10 +14,34 @@ from datetime import datetime
 #                     template_name = 'main.html')
 # >>>>>>> main
 def main(request):
-     now = datetime.now()
-     current_year = now.year
-     return render(request, 'main.html',{'current_year': current_year})
+    return render(request, 'main.html')
+
+def create(request, post_id):
+    if request.method == 'GET':
+        form = EditorForm()
+        return render(request=request, template_name='create.html', context={ 'form': form, 'id': post_id })
+
+    if request.method == 'POST':
+        form = EditorForm(request.post)
+        if form.is_valid():
+            if 'create' in request.POST:
+                # get cleaned data from form
+                name = form.cleaned_data['name']
+                email = form.cleaned_data['email']
+                address = form.cleaned_data['address']
+                phone = form.cleaned_data['phone']
+                license = form.cleaned_data['license']
+                # create QuerySet object with cleaned name, specialty, address, phone
+                lawyer = Lawyer.objects.create(name=name, email=email, address=address, phone=phone, license=license)
+                # set cleaned tags to ManyRelatedManager object
+                lawyer.specialty.set(specialty)
+            submit = form.cleaned_data['lawyer']
+        return HttpResponseRedirect(reverse('lawyer'))
+
      
      
 def contact(request):
     return render(request, 'contact.html')
+
+def edit(request):
+    return render(request, 'edit.html')
