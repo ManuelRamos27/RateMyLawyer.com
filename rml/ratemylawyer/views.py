@@ -5,6 +5,7 @@ from django.urls import reverse
 from .forms import EditorForm
 
 
+
 # Create your views here.
 
 # def ratemylawyer(request):
@@ -36,6 +37,7 @@ def create(request, post_id):
                 lawyer.specialty.set(specialty)
             submit = form.cleaned_data['lawyer']
         return HttpResponseRedirect(reverse('lawyer'))
+
      
      
 def contact(request):
