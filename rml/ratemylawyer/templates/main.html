@@ -13,14 +13,14 @@
 
     {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
-    <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a>
+    <!-- <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
     <h2>{{ lawyer.name }}</h2>
     <p>{{ lawyer.address }}</p>
     <p>{{ lawyer.phone}}</p>
     <p>{{ lawyer.email}}</p>
 
     <div>
-        {% for specialty in lawyer.specialties.all %}
+        <!-- {% for specialty in lawyer.specialties.all %} -->
         <span
             style="color: black; background-color: lightblue; margin-right: 4px"
             >{{ tag.name }}</span
