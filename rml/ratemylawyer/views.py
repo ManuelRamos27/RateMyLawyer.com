@@ -14,12 +14,13 @@ from .forms import EditorForm
 #                     template_name = 'main.html')
 # >>>>>>> main
 def main(request):
-    return render(request, 'main.html')
+    lawyers = Lawyer.objects.all().order_by('-lawyer_id')
+    return render(request, 'main.html', context = {'lawyers': lawyers})
 
-def create(request, post_id):
+def create(request, specialty_id):
     if request.method == 'GET':
         form = EditorForm()
-        return render(request=request, template_name='create.html', context={ 'form': form, 'id': post_id })
+        return render(request=request, template_name='create.html', context={ 'form': form, 'id': specialty_id })
 
     if request.method == 'POST':
         form = EditorForm(request.post)
@@ -45,3 +46,4 @@ def contact(request):
 
 def edit(request):
     return render(request, 'edit.html')
+
