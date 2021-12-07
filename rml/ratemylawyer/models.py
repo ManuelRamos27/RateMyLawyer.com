@@ -3,13 +3,13 @@ from django.db import models
 
 # Create your models here.
 class Lawyer(models.Model):
+    # lawyer_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    specialty = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     license = models.CharField(max_length=100)
-    #rating = models.IntegerField(max_length=10)
+    rating = models.IntegerField(max_length=10)
     #cost = models.IntegerField()
     #comment = models.ForeignKey(Review, blank=True, null=True, on_delete=models.CASCADE)
     #image = models.ImageField(upload_to='images/')
@@ -25,3 +25,8 @@ class Specialty(models.Model):
     specialty_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     
+
+class Comment(models.Model):
+    comment_id = models.AutoField(primary_key=True)
+    comment = models.CharField(max_length=255)
+    # lawyer_id = models.ForeignKey(Lawyer, on_delete=models.CASCADE)

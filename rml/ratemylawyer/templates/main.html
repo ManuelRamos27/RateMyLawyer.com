@@ -11,6 +11,28 @@
 <body>
     {% extends 'base.html' %}
     {%block content%}
+
+    {% for lawyer in lawyers %}
+<div style="padding: 32px 0px">
+    <!-- <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
+    <h2>{{ lawyer.name }}</h2>
+    <p>{{ lawyer.address }}</p>
+    <p>{{ lawyer.phone}}</p>
+    <p>{{ lawyer.email}}</p>
+
+    <div>
+        <!-- {% for specialty in lawyer.specialties.all %} -->
+        <span
+            style="color: black; background-color: lightblue; margin-right: 4px"
+            >{{ tag.name }}</span
+        >
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+<form action="{ % url 'create' id % }">
+    <input type="submit" value="Create a new review!" />
+</form>
     
     
     <!-- <h1>Rate My Lawyer</h1> -->

@@ -1,4 +1,3 @@
-<h1>Create your Lawyer Review!</h1>>
 <style>
     input[type='text'],
     input[type='url'],
@@ -6,9 +5,17 @@
         display: block;
     }
 </style>
+
+{% extends 'base.html' %}
+{%block content%}
+<center>
 <h1>Create Lawyer Review</h1>
 <form action="{% url 'edit' id %}" method="POST">
     {% csrf_token %} {{ form }}
     <input type="submit" name="save" value="Save" />
     <input type="submit" name="delete" value="Delete" />
 </form>
+{% endblock %}
+
+
+</center>
