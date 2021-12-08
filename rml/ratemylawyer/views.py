@@ -52,3 +52,7 @@ def contact(request):
 
 def edit(request):
     return render(request, 'edit.html')
+
+def browse(request):
+    return render(request, 'browselawyer.html')
+
