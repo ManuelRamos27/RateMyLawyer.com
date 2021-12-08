@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +11,8 @@
 
 </head>
 <body>
-    {% extends 'base.html' %}
-    {%block content%}
+    <!-- {% extends 'base.html' %}
+    {%block content%} -->
 
     {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
@@ -47,6 +49,6 @@
 
     <br><br><br>
 
-{% endblock %}
+<!-- {% endblock %} -->
 </body>
 </html>
