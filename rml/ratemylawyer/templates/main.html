@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +13,6 @@
 <body>
     <!-- {% extends 'base.html' %}
     {%block content%} -->
-<h1>Ratemylawyer</h1>    
-<br>
     {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
     <!-- <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
