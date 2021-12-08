@@ -9,16 +9,17 @@
 
 </head>
 <body>
-    {% extends 'base.html' %}
-    {%block content%}
-
+    <!-- {% extends 'base.html' %}
+    {%block content%} -->
+<h1>Ratemylawyer</h1>    
+<br>
     {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
     <!-- <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
-    <h2>{{ lawyer.name }}</h2>
+    <!-- <h2>{{ lawyer.name }}</h2>
     <p>{{ lawyer.address }}</p>
     <p>{{ lawyer.phone}}</p>
-    <p>{{ lawyer.email}}</p>
+    <p>{{ lawyer.email}}</p> -->
 
     <div>
         <!-- {% for specialty in lawyer.specialties.all %} -->
@@ -47,6 +48,6 @@
 
     <br><br><br>
 
-{% endblock %}
+<!-- {% endblock %} -->
 </body>
 </html>
