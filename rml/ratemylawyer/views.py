@@ -52,4 +52,3 @@ def contact(request):
 
 def edit(request):
     return render(request, 'edit.html')
-
