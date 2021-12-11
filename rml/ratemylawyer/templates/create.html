@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Create Review</title>
 </head>
-<body>
+
     <style>
         input[type='text'],
         input[type='url'],
+        input[type='email'],
         textarea {
+            box-sizing: border-box;
             display: block;
+            width: 35%;
         }
     </style>
     
@@ -20,12 +24,10 @@
     <h1>Create Lawyer Review</h1>
     <form action="{% url 'edit' id %}" method="POST">
         {% csrf_token %} {{ form }}
-        <input type="submit" name="save" value="Save" />
-        <input type="submit" name="delete" value="Delete" />
+        <input type="submit" name="save" value="        Save    " />
+        <input type="submit" name="delete" value="   Delete      " />
     </form>
 
-    
-    
     </center>
-</body>
+</>
 </html>

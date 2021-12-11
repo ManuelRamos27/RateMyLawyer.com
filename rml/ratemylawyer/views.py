@@ -13,7 +13,8 @@ from .forms import EditorForm
 #     if request.method == 'GET':
 #         return render(request = request,
 #                     template_name = 'main.html')
-# >>>>>>> main
+# main
+
 def main(request):
     # lawyers = Lawyer.objects.all().order_by('-lawyer_id')
     # now = datetime.now()
@@ -52,6 +53,9 @@ def contact(request):
 
 def edit(request):
     return render(request, 'edit.html')
+    if request.method == 'GET':
+        return render(request = request,
+                      template_name = 'edit.html')
 
 def browse(request):
     return render(request, 'browselawyer.html')
