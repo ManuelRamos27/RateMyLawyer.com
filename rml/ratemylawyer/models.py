@@ -1,32 +1,27 @@
 from django.db import models
 
-
 # Create your models here.
+
+class Specialty(models.Model):
+    specialty_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+
 class Lawyer(models.Model):
-    # lawyer_id = models.AutoField(primary_key=True)
+    lawyer_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     license = models.CharField(max_length=100)
-    # rating = models.IntegerField()
-    #cost = models.IntegerField()
-    #comment = models.ForeignKey(Review, blank=True, null=True, on_delete=models.CASCADE)
-    #image = models.ImageField(upload_to='images/')
+    rating = models.IntegerField()
+    cost = models.IntegerField()
     website = models.URLField(max_length=200)
-    #guests = models.ManyToManyField(Guests, blank=True)
-    specialty = models.ManyToManyField('Specialty', blank=True)
-    
+    specialties = models.ManyToManyField(Specialty)
+
     def __str__(self):
         return self.name
-    
-    
-class Specialty(models.Model):
-    specialty_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    
-
-# class Comment(models.Model):
-#     comment_id = models.AutoField(primary_key=True)
-#     comment = models.CharField(max_length=255)
-#     # lawyer_id = models.ForeignKey(Lawyer, on_delete=models.CASCADE)
+        
+class Comment(models.Model):
+    comment_id = models.AutoField(primary_key=True)
+    comment = models.CharField(max_length=255)
+    lawyer_id = models.ForeignKey(Lawyer, on_delete=models.CASCADE)
