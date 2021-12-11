@@ -21,13 +21,13 @@ def main(request):
     # current_year = now.year
     return render(request, 'main.html')
 
-def create(request, specialty_id):
+def create(request, ):
     if request.method == 'GET':
         form = EditorForm()
-        return render(request=request, template_name='create.html', context={ 'form': form, 'id': specialty_id })
+        return render(request=request, template_name='create.html', context={ 'form': form,  })
 
     if request.method == 'POST':
-        form = EditorForm(request.post)
+        form = EditorForm()
         if form.is_valid():
             if 'create' in request.POST:
                 # get cleaned data from form
@@ -41,7 +41,7 @@ def create(request, specialty_id):
                 # set cleaned tags to ManyRelatedManager object
                 lawyer.specialty.set(specialty)
             submit = form.cleaned_data['lawyer']
-        return HttpResponseRedirect(reverse('lawyer'))
+        return HttpResponseRedirect(reverse('browse'))
 
      
      
