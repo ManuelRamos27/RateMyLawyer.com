@@ -1,6 +1,6 @@
 from django import forms
 from .models import Lawyer
-#from .models import Specialty
+from .models import Specialty
 
 class EditorForm(forms.Form):
     name = forms.CharField(max_length=255, required=True)
@@ -12,6 +12,6 @@ class EditorForm(forms.Form):
     website = forms.URLField(max_length=200)
     rating = forms.IntegerField()
     choices = []
-    # for specialty in Specialty.objects.all():
-    #     choices.append((specialty.specialty_id, specialty.name))
-    # specialties = forms.MultipleChoiceField(choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
+    for specialty in Specialty.objects.all():
+        choices.append((specialty.specialty_id, specialty.name))
+    specialties = forms.MultipleChoiceField(choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
