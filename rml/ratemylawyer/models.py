@@ -13,8 +13,8 @@ class Lawyer(models.Model):
     phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     license = models.CharField(max_length=100)
-    rating = models.IntegerField()
-    cost = models.IntegerField()
+    rating = models.CharField(max_length=6)
+    cost = models.CharField(max_length=6)
     website = models.URLField(max_length=200)
     specialties = models.ManyToManyField(Specialty)
 
