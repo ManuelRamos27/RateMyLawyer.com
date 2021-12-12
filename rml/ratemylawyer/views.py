@@ -59,6 +59,8 @@ def edit(request):
 
 def browse(request):
     return render(request, 'browselawyer.html')
+  
 
 def media(request):
     return render(request, 'media.html')
+    pass

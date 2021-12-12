@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Create Review</title>
-</head>
-
+</head> 
     <style>
         input[type='text'],
         input[type='url'],
@@ -15,7 +14,7 @@
         textarea {
             box-sizing: border-box;
             display: block;
-            width: 35%;
+            width: 15%;
         }
     </style>
     
@@ -24,10 +23,10 @@
     <h1>Create Lawyer Review</h1>
     <form action="{% url 'create' %}" method="POST">
         {% csrf_token %} {{ form }}
-        <input type="submit" name="create" value="    Create    " />
+        <input type="submit" name="create" value="          Create       " />
         <!-- <input type="submit" name="delete" value="  Delete    " /> -->
     </form>
 
     </center>
-</>
+</b>
 </html>
