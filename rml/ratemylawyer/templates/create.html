@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,15 @@
     
     <title>Create Review</title>
 </head>
-
+<body id='bg' style="background-image:url('{% static 'imgs/lwyr3.png'%}');">
+    <div class="background: no-repeat center center fixed:cover;">
     <style>
         input[type='text'],
         input[type='url'],
         input[type='email'],
         input[type='number'],
+        input[type='checkbox'],
+        input[type='select'],
         textarea {
             box-sizing: border-box;
             display: block;
