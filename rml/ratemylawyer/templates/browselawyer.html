@@ -14,5 +14,31 @@
         <input type="submit" value="Search">
     </form>
 
+
+
+
+    {% for review in reviews %}
+    <center>
+    <div style="padding: 32px 0px">
+        <h2>{{ review.name }}</h2>
+        <p>{{ review.address }}</p>
+        <p>{{ review.phone }}</p>
+        <p>{{ review.email }}</p>
+        <p>{{ review.website }}</p>
+        <p>{{ review.license }}</p>
+        <p>{{ review.rating }}</p>
+        <p>{{ review.cost }}</p>
+        <div>
+            {% for specialty in post.specialties.all %}
+            <span
+                style="color: black; background-color: lightblue; margin-right: 4px"
+                >{{ specialty.name }}</span
+            >
+            {% endfor %}
+        </div>
+    </div>
+    </center>
+    {% endfor %}
+
 </body>
 </html>
