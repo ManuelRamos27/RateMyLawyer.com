@@ -54,8 +54,7 @@ def contact(request):
 def edit(request):
     return render(request, 'edit.html')
     if request.method == 'GET':
-        return render(request = request,
-                      template_name = 'edit.html')
+        return render(request = 'edit.html')
 
 def browse(request):
     return render(request, 'browselawyer.html')

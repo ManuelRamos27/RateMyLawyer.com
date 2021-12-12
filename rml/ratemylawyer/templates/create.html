@@ -1,13 +1,63 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!-- <body style="background-color:rgb(145, 150, 151);"> -->
+<link href="styles.css" rel="stylesheet">    
     <title>Create Review</title>
 </head>
-
+<body id='bg' style="background-image:url('{% static 'imgs/lwyr3.png'%}');">
+   <div class="background: no-repeat center center fixed:cover;">
+    <!-- <<div class="container"> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Create Review</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="{% url 'create' %}" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="review">Review</label>
+                                <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="rating">Rating</label>
+                                <select class="form-control" id="rating" name="rating">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            <div class="form-group">
+                                <label for="$ $ $ $">$ $ $ $</label>
+                                <select class="form-control" id="lawyer" name="lawyer">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <select>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     <style>
         input[type='text'],
         input[type='url'],
@@ -22,6 +72,7 @@
 
     <center>
     <h1>Create Lawyer Review</h1>
+
     <form action="{% url 'create' %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="    Create    " />
@@ -29,5 +80,5 @@
     </form>
 
     </center>
-</>
+</si>
 </html>
