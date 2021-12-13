@@ -21,14 +21,13 @@
     {% for review in reviews %}
     <center>
     <div style="padding: 32px 0px">
-        <h2>{{ review.name }}</h2>
-        <p>{{ review.address }}</p>
-        <p>{{ review.phone }}</p>
-        <p>{{ review.email }}</p>
-        <p>{{ review.website }}</p>
-        <p>{{ review.license }}</p>
-        <p>{{ review.rating }}</p>
-        <p>{{ review.cost }}</p>
+        <h2>Name: {{ review.name }}</h2>
+        <p>Address: {{ review.address }}</p>
+        <p>Phone: {{ review.phone }}</p>
+        <p>Email: {{ review.email }}</p>
+        <p>License: {{ review.license }}</p>
+        <p>Rating:{{ review.rating }}</p>
+        <p>Cost: {{ review.cost }}</p>
         <div>
             {% for specialty in post.specialties.all %}
             <span

@@ -35,11 +35,15 @@
     <h1>Rate My Lawyer</h1>
    
     <div class="container">
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>
+        <a href="{% url 'main' %}">Home</a>
+        <a href="{% url 'media' %}">Media</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'browse' %}">Browse</a>
+        <!-- <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/browse">Browse Reviews</a>
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/create">Create Review</a>
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/contact">Contact</a>
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/media">Media</a>
+        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/media">Media</a> -->
     </p>
        
 
