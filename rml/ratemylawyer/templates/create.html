@@ -28,7 +28,7 @@
 
     <center>
     <h1>Create Lawyer Review</h1>
-    <form action="{% url 'browse' id %}" method="POST">
+    <form action="{% url 'create' id %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="Create" />
         <!-- <input type="submit" name="delete" value="  Delete    " /> -->
