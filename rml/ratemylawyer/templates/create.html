@@ -28,6 +28,13 @@
 
     <center>
     <h1>Create Lawyer Review</h1>
+    <div class="container">
+        <a href="{% url 'main' %}">Home</a>
+        <a href="{% url 'media' %}">Media</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'browse' %}">Browse</a>
+    </div>
+
     <form action="{% url 'create' id %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="Create" />
