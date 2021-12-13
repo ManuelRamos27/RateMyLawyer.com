@@ -9,5 +9,5 @@ urlpatterns =[
     path('edit/<int:specialty_id>', views.edit, name='edit'),
     path('browselawyer/', views.browse, name="browse"),
     path('media/', views.media, name="media"),
-    
+   
 ]

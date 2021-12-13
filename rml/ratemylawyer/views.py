@@ -65,3 +65,5 @@ def edit(request):
 
 def media(request):
     return render(request, 'media.html')
+    pass
+
