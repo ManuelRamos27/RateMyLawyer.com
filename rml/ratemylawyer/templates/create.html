@@ -18,6 +18,7 @@
         input[type='number'],
         input[type='checkbox'],
         input[type='select'],
+        input[type='dropdown'],
         textarea {
             box-sizing: border-box;
             display: block;
@@ -28,6 +29,15 @@
 
     <center>
     <h1>Create Lawyer Review</h1>
+    <div class="container">
+        <a href="{% url 'main' %}">Home</a>
+        <a href="{% url 'media' %}">Media Page</a>
+        <a href="{% url 'contact' %}">Contact Page</a>
+        <a href="{% url 'browse' %}">Browse Reviews</a>
+        <a href="/create/1">Create Review</a>
+        <!-- <a href="/edit/1">Edit Review</a> -->
+    </div>
+
     <form action="{% url 'create' id %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="Create" />

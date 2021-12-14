@@ -6,23 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media</title>
     <body style="background-color:rgba(244, 123, 135, 0.224);"></body>
+    <!-- <body img src="https://imgur.com/a/cOmQkW7" style="width:100px;height:100px;"> -->
+
+    <h1>Media</h1>   
+    <div class="container">
+        <a href="{% url 'main' %}">Home</a>
+        <a href="{% url 'media' %}">Media Page</a>
+        <a href="{% url 'contact' %}">Contact Page</a>
+        <a href="{% url 'browse' %}">Browse Reviews</a>
+        <a href="/create/1">Create Review</a>
+        <!-- <a href="/edit/1">Edit Review</a> -->
+    </div>
+
+
+
 </head>
+
+
 <body>
-    <style>
-        input[type='text'],
-        input[type='url'],
-        textarea {
-            display: block;
-        }
-    </style>
-    
+    <br>
+    <br>
 
-    <center>
-    <h1>Media <h1>
+    <h2>News</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-    
-    
-    </center>
+
+    <br>
+    <br>
+
+<h2>Podcasts</h2>
+<p>Latest Podcast</p>
+
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+
+        </audio>
+
+<br>
+<br>
+<br>
+
+<h2>Videos</h2>
+<p>Latest Video</p>
+
+        <video width="320" height="240" controls>
+            <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
+        </video>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

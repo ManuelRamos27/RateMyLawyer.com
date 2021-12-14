@@ -9,6 +9,16 @@
 <body
 <body>
     <h1>Browse Lawyer</h1>
+
+    <div class="container">
+        <a href="{% url 'main' %}">Home</a>
+        <a href="{% url 'media' %}">Media Page</a>
+        <a href="{% url 'contact' %}">Contact Page</a>
+        <a href="{% url 'browse' %}">Browse Reviews</a>
+        <a href="/create/1">Create Review</a>
+        <!-- <a href="/edit/1">Edit Review</a> -->
+    </div>
+
     <form action="browselawyer.php" method="post">
         <label for="">Lawyer Name</label>
         <input type="text" name="lawyers_name">
