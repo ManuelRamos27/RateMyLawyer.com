@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <body style="background-color:rgba(244, 123, 135, 0.224);">
-    <title><centerRatemylawyer</title>
+    <title><center>Rate My Lawyer</center> </title>
 
 </head>
 <body>
-    {% for lawyer in lawyers %}
+    <!-- {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
-    <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a>
+    <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
 
 
 
@@ -27,18 +27,20 @@
     </div>
 </div>
 {% endfor %}
-<form action="{ % url 'create' id % }">
+<!-- <form action="{ % url 'create' id % }">
     <input type="submit" value="Create a new review!" />
-</form>
+</form> -->
 
     
     <h1>Rate My Lawyer</h1>
    
     <div class="container">
         <a href="{% url 'main' %}">Home</a>
-        <a href="{% url 'media' %}">Media</a>
-        <a href="{% url 'contact' %}">Contact</a>
-        <a href="{% url 'browse' %}">Browse</a>
+        <a href="{% url 'media' %}">Media Page</a>
+        <a href="{% url 'contact' %}">Contact Page</a>
+        <a href="{% url 'browse' %}">Browse Reviews</a>
+        <a href="/create/1">Create Review</a>
+        <!-- <a href="/edit/1">Edit Review</a> -->
     </div>
         <!-- <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/browse">Browse Reviews</a>
@@ -46,7 +48,11 @@
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/contact">Contact</a>
         <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/media">Media</a> -->
     </p>
-       
+
+
+
+
+
 
     <br>
     <br>
