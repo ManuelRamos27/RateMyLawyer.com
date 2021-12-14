@@ -20,3 +20,8 @@ class EditorForm(forms.Form):
     for specialty in Specialty.objects.all():
         choices.append((specialty.specialty_id, specialty.name))
     specialties = forms.MultipleChoiceField(choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
+
+# class MyModel(models.Model):
+#     start_time = models.DateFimeField(null=True, blank=True)
+#     created_on = models.DateTimeField(auto_now_add=True)
+#     updated_on = models.DateTimeField(auto_now=True)

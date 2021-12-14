@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    html,
+    body{
+        margin: 0;
+    }
+    .banner {
+        background: rgb(191, 223, 228); 
+    }
+    .banner__content {
+        padding: 5px;
+        max-width: 1000;
+        margin: 0 auto; 
+        display: flex;
+        align-items: center;   
+    }
+
+</style>
+</head>
+<body>
+    <div class="banner">
+        <div class = "banner__content"></div>
+            <div class="banner__text"></div>
+
+              <h1> <center>Rate my Lawyer</center><h1>
+                <h3><center>Get the law on your side! </center> </h3>
+    </div>
 <div class="container">
     <a href="{% url 'main' %}">Home</a>
     <a href="{% url 'media' %}">Media Page</a>

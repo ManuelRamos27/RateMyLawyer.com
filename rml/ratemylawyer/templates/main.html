@@ -8,9 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <body style="background-color:rgba(244, 123, 135, 0.224);">
     <title><center>Rate My Lawyer</center> </title>
+<style>
+    html,
+    body{
+        margin: 0;
+    }
+    .banner {
+        background: rgb(191, 223, 228); 
+    }
+    .banner__content {
+        padding: 5px;
+        max-width: 1000;
+        margin: 0 auto; 
+        display: flex;
+        align-items: center;   
+    }
 
+</style>
 </head>
 <body>
+    <div class="banner">
+        <div class = "banner__content"></div>
+            <div class="banner__text"></div>
+
+              <h1> <center>Rate my Lawyer</center><h1>
+                <h3><center>Get the law on your side! </center> </h3>
+    </div>
+                    
+<body>
+
     <!-- {% for lawyer in lawyers %}
 <div style="padding: 32px 0px">
     <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
@@ -20,7 +46,7 @@
 <div>
         <!-- {% for specialty in lawyer.specialties.all %} -->
         <span
-            style="color: black; background-color: lightblue; margin-right: 4px"
+            style="color: black; background-color: rgb(91, 136, 151); margin-right: 4px"
             >{{ tag.name }}</span
         >
         {% endfor %}
@@ -32,14 +58,16 @@
 </form> -->
 
     
-    <h1>Rate My Lawyer</h1>
+    <!-- <h1>Rate My Lawyer</h1> -->
    
     <div class="container">
+        <center>
         <a href="{% url 'main' %}">Home</a>
         <a href="{% url 'media' %}">Media Page</a>
         <a href="{% url 'contact' %}">Contact Page</a>
         <a href="{% url 'browse' %}">Browse Reviews</a>
         <a href="/create/1">Create Review</a>
+    </center>
         <!-- <a href="/edit/1">Edit Review</a> -->
     </div>
         <!-- <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>

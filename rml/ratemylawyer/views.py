@@ -32,6 +32,7 @@ def create(request, lawyer_id ):
         if form.is_valid():
             if 'create' in request.POST:
                 # get cleaned data from form
+            
                 name = form.cleaned_data['name']
                 email = form.cleaned_data['email']
                 address = form.cleaned_data['address']
