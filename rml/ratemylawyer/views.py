@@ -41,8 +41,9 @@ def create(request, lawyer_id ):
                 specialties = form.cleaned_data['specialties']
                 cost = form.cleaned_data['cost']
                 rating = form.cleaned_data['rating']
+                website = form.cleaned_data['website']
                 # create QuerySet object with cleaned name, specialty, address, phone
-                lawyer = Lawyer.objects.create(name=name, email=email, address=address, phone=phone, license=license, cost=cost, rating=rating)
+                lawyer = Lawyer.objects.create(name=name, email=email, address=address, phone=phone, license=license, cost=cost, rating=rating, website=website)
                 # set cleaned tags to ManyRelatedManager object
                 lawyer.specialties.set(specialties)
             submit = form.cleaned_data['browse']
@@ -56,11 +57,34 @@ def contact(request):
         return render(request = request,
                       template_name = 'contact.html')
 
-def edit(request):
-    return render(request, 'edit.html')
+def edit(request, lawyer_id):
     if request.method == 'GET':
-            return render(request = request,
-                      template_name = 'edit.html')
+        post = Lawyer.objects.get(pk=lawyer_id)
+        specialids = []
+        for specialid in post.specialties.all():
+            specialids.append(specialid.specialty_id)
+        form = EditorForm(initial={'name' : post.name, 'address' : post.address, 'phone' : post.phone, 'email' : post.email, 'license' : post.license, 'specialty': specialids, 'cost' : post.cost, 'rating' : post.rating, 'website' : post.website })
+        return render(request=request, template_name='edit.html', context={'form' : form, 'id': lawyer_id})
+    if request.method == 'POST':
+        form = EditorForm(request.POST)
+        if form.is_valid():
+                if 'save' in request.POST:
+                    name = form.cleaned_data['name']
+                    address = form.cleaned_data['address']
+                    phone = form.cleaned_data['phone']
+                    license =  form.cleaned_data['license']
+                    specialty = form.cleaned_data['specialty']
+                    cost = form.cleaned_data['cost']
+                    rating = form.cleaned_data['rating']
+                    website = form.cleaned_data['website']
+                    posts = Lawyer.objects.filter(pk=lawyer_id)
+                    posts.update(name=name, address=address)
+                elif 'delete' in request.POST:
+                    Lawyer.objects.filter(pk=lawyer_id).delete()
+        return HttpResponseRedirect(reverse('browse'))
+
+
+
 
 
 

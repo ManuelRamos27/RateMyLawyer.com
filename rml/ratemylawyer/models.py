@@ -23,15 +23,11 @@ class Lawyer(models.Model):
         return self.name
         
 class Comment(models.Model):
-    lawyer_id = models.ForeignKey(Lawyer, on_delete=models.CASCADE)
+    post = models.ForeignKey(Lawyer,related_name="comments", on_delete=models.CASCADE)
     author = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.TextField() #body
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
-
-    def approve(self):
-        self.approved_comment = True
-        self.save()
 
     def __str__(self):
         return self.text
