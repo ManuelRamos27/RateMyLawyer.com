@@ -1,6 +1,6 @@
 from django import forms
 from .models import Lawyer
-from .models import Specialty
+from .models import Specialty, Comment
 
 cost_choices = [('$','$'),('$$','$$'),('$$$','$$$'),('$$$$','$$$$')]
 star_choices = [('*','*'),('**','**',),('***','***'),('****','****'),('*****','*****')]
@@ -25,7 +25,8 @@ class EditorForm(forms.Form):
 
     specialties = forms.MultipleChoiceField(label = "specialties", choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
 
-# class MyModel(models.Model):
-#     start_time = models.DateFimeField(null=True, blank=True)
-#     created_on = models.DateTimeField(auto_now_add=True)
-#     updated_on = models.DateTimeField(auto_now=True)
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)

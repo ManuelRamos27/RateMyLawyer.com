@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -22,6 +23,16 @@ class Lawyer(models.Model):
         return self.name
         
 class Comment(models.Model):
-    comment_id = models.AutoField(primary_key=True)
-    comment = models.CharField(max_length=255)
     lawyer_id = models.ForeignKey(Lawyer, on_delete=models.CASCADE)
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return self.text
+   

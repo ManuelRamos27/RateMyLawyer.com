@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Lawyer
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import EditorForm
+from .forms import EditorForm, CommentForm
 # from .models import Datetime
 
 
@@ -68,3 +68,15 @@ def media(request):
     return render(request, 'media.html')
     pass
 
+def add_comment_to_post(request, lawyer_id):
+    post = get_object_or_404(Lawyer, lawyer_id = lawyer_id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('browse', lawyer_id=post.lawyer_id)
+    else:
+        form = CommentForm()
+    return render(request, 'add_comment_to_post.html', {'form': form})
