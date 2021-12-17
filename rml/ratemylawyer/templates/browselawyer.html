@@ -64,6 +64,14 @@
         <p>License: {{ review.license }}</p>
         <p>Rating:{{ review.rating }}</p>
         <p>Cost: {{ review.cost }}</p>
+        <div>
+            {% for specialty in review.specialties.all %}
+            <span
+                style="color: black; background-color: lightblue; margin-right: 4px"
+                >{{ specialty.name }}</span
+            >
+            {% endfor %}   
+        </div>
         <a href="{% url 'edit' review.lawyer_id %}">Edit Review</a>
         <h2>Comments...</h2>    
     {% endfor %}
