@@ -34,7 +34,7 @@
 </head>
 <body
 <body>
-    <h1>Browse Lawyer</h1>
+<center>    <h1>Browse Lawyer</h1>
 
     <div class="container">
         <a href="{% url 'main' %}">Home</a>
@@ -42,9 +42,8 @@
         <a href="{% url 'contact' %}">Contact Page</a>
         <a href="{% url 'browse' %}">Browse Reviews</a>
         <a href="/create/1">Create Review</a>
-        <!-- <a href="/edit/1">Edit Review</a> -->
     </div>
-
+</center>
     <form action="browselawyer.php" method="post">
         <label for="">Lawyer Name</label>
         <input type="text" name="lawyers_name">
@@ -62,22 +61,35 @@
         <p>Phone: {{ review.phone }}</p>
         <p>Email: {{ review.email }}</p>
         <p>License: {{ review.license }}</p>
+        <p>Website: {{ review.website}}</p>
         <p>Rating:{{ review.rating }}</p>
         <p>Cost: {{ review.cost }}</p>
         <div>
-            <br>
-            {% for specialty in post.specialties.all %}
+            <H2>Specialties</H2>
+            {% for specialty in review.specialties.all %}
             <span
                 style="color: black; background-color: lightblue; margin-right: 4px"
-                
-                >{{ specialty.name }}
-                </span
+                >{{ specialty.name }}</span
             >
-            {% endfor %}
+            {% endfor %}   
         </div>
-    </div>
-    </center>
+        <br>
+        <a href="{% url 'edit' review.lawyer_id %}">Click here to edit this review</a>
+        <h2>Comments...</h2>    
     {% endfor %}
+
+{% if not post.comments.all %}
+    No Comments Yet... <a href="#">Add One</a>
+{% else %}
+    {% for comment in post.comments.all %}
+        <strong>
+            {{ comment.author }} -
+            {{ comment.created_date }}
+        </strong>
+        <br/>
+        {{ comment.text }}
+    {% endfor %}
+{% endif %}
 
 </body>
 </html>

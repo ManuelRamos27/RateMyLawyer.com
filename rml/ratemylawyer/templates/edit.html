@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<style>
+    input[type='text'],
+        input[type='url'],
+        input[type='email'],
+        input[type='number'],
+        input[type='checkbox'],
+        select,
+        textarea {
+            box-sizing: border-box;
+            display: block;
+            width: 35%;
+    }
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +45,7 @@
               <h1> <center>Rate my Lawyer</center><h1>
                 <h3><center>Get the law on your side! </center> </h3>
     </div>
+<center>
 <div class="container">
     <a href="{% url 'main' %}">Home</a>
     <a href="{% url 'media' %}">Media Page</a>
@@ -40,15 +54,24 @@
     <a href="/create/1">Create Review</a>
     <!-- <a href="/edit/1">Edit Review</a> -->
 </div>
+</center>
 
-<body style="background-image:url('{% static imgs//Users/kelvina.melgar/Desktop/RateMyLawyer/RateMyLawyer/rml/ratemylawyer/static/imgs/clouds.gif' %})" >
-    <body style="background-color:rgba(244, 123, 135, 0.224);"></body>
+<center>
+<h1>Edit Post</h1>
+<form action="{% url 'edit' id %}" method="POST">
+    {% csrf_token %} {{ form }}
+    <input type="submit" name="save" value="Save" />
+    <input type="submit" name="delete" value="Delete" />
+</form>
+</center>
 </body>
 </html>
 <center>
     
 <img src="https://tse2.mm.bing.net/th?id=OIP.AmwyAOevT-stO76pbAaViAHaCH&pid=Api&P=0&" 
 alt="RateMyLawyer" width="100%" height="1280px" style="-webkit-margin-top-collapse: 900px;">
+
+
 
 
 
