@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <center><img src="{% static 'billboard.png' %}" alt="My image"></center>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <body style="background-color:rgba(244, 123, 135, 0.224);">
     <title> <center>Rate My Lawyer</center> </title>
 <style>
+
+    
     html,
     body{
         margin: 0;
@@ -25,63 +28,53 @@
     }
 
 </style>
+<br>
+<br>
+<div class="container">
+    <center>
+    <a href="{% url 'main' %}">Home</a>
+    <a href="{% url 'media' %}">Media Page</a>
+    <a href="{% url 'contact' %}">Contact Page</a>
+    <a href="{% url 'browse' %}">Browse Reviews</a>
+    <a href="{% url 'create' %}">Create Review</a>
+</center>
+<br>
+<br>
+
+</div>
 </head>
 <body>
     <div class="banner">
         <div class = "banner__content"></div>
             <div class="banner__text"></div>
-
-              <h1> <center>Rate my Lawyer</center><h1>
-                <h3><center>Get the law on your side! </center> </h3>
+                <h3 style ="font-size: 50px;"><center>Get the law on your side! </center> </h3>
     </div>
                     
 <body>
 
-    <!-- {% for lawyer in lawyers %}
-<div style="padding: 32px 0px">
-    <a href="{% url 'edit' lawyer.lawyer_id %}">Edit Post</a> -->
+
 
 
 
 <div>
-        <!-- {% for specialty in lawyer.specialties.all %} -->
         <span
             style="color: black; background-color: rgb(91, 136, 151); margin-right: 4px"
             >{{ tag.name }}</span
         >
-        {% endfor %}
+     
     </div>
 </div>
-{% endfor %}
-<!-- <form action="{ % url 'create' id % }">
-    <input type="submit" value="Create a new review!" />
-</form> -->
-
-    
-    <!-- <h1>Rate My Lawyer</h1> -->
-   
-    <div class="container">
-        <center>
-        <a href="{% url 'main' %}">Home</a>
-        <a href="{% url 'media' %}">Media Page</a>
-        <a href="{% url 'contact' %}">Contact Page</a>
-        <a href="{% url 'browse' %}">Browse Reviews</a>
-        <a href="/create/1">Create Review</a>
-    </center>
-        <!-- <a href="/edit/1">Edit Review</a> -->
-    </div>
-        <!-- <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/index">Home</a>
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/browse">Browse Reviews</a>
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/create">Create Review</a>
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/contact">Contact</a>
-        <a href="<?php echo $base_url; ?>/rml/ratemylawyer/index.php/home/media">Media</a> -->
-    </p>
 
 
 
-
-
-
+<center>
+    <button type="button" style = "background-color:rgb(255, 255, 255); width:600px; height:150px; border-radius: 20px; font-size: 30px;">
+        <a href="{% url 'browse' %}">Browse Lawyer Reviews</a>
+    </button>
+    <button type="button" style = "background-color:rgb(255, 255, 255); width:600px; height:150px; border-radius: 20px; font-size: 30px;">
+        <a href="{% url 'create' %}">Create a New Lawyer Review</a>
+    </button>
+</center>
     <br>
     <br>
     <br>

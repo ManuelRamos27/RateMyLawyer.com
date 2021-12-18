@@ -42,7 +42,6 @@
         <a href="{% url 'contact' %}">Contact Page</a>
         <a href="{% url 'browse' %}">Browse Reviews</a>
         <a href="/create/1">Create Review</a>
-        <!-- <a href="/edit/1">Edit Review</a> -->
     </div>
 </center>
     <form action="browselawyer.php" method="post">
@@ -62,9 +61,11 @@
         <p>Phone: {{ review.phone }}</p>
         <p>Email: {{ review.email }}</p>
         <p>License: {{ review.license }}</p>
+        <p>Website: {{ review.website}}</p>
         <p>Rating:{{ review.rating }}</p>
         <p>Cost: {{ review.cost }}</p>
         <div>
+            <H2>Specialties</H2>
             {% for specialty in review.specialties.all %}
             <span
                 style="color: black; background-color: lightblue; margin-right: 4px"
@@ -72,7 +73,8 @@
             >
             {% endfor %}   
         </div>
-        <a href="{% url 'edit' review.lawyer_id %}">Edit Review</a>
+        <br>
+        <a href="{% url 'edit' review.lawyer_id %}">Click here to edit this review</a>
         <h2>Comments...</h2>    
     {% endfor %}
 
