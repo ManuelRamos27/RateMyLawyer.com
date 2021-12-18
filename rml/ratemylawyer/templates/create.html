@@ -65,13 +65,13 @@
         <a href="{% url 'media' %}">Media Page</a>
         <a href="{% url 'contact' %}">Contact Page</a>
         <a href="{% url 'browse' %}">Browse Reviews</a>
-        <a href="/create/1">Create Review</a>
+        <a href="{% url 'create' %}">Create Review</a>
         <!-- <a href="/edit/1">Edit Review</a> -->
     </div>
 
 <!-- <ul id=""> -->
     <ul> <textarea name="Id_specialties" id="Id_specialties" cols="50" rows="19"></textarea></ul>
-    <form action="{% url 'create' id %}" method="POST">
+    <form action="{% url 'create' %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="Create" />
         <!-- <input type="submit" name="delete" value="  Delete    " /> -->

@@ -16,10 +16,10 @@ def browse(request):
     reviews = Lawyer.objects.all().order_by('-lawyer_id')
     return render(request=request, template_name='browselawyer.html', context={ 'reviews' : reviews})
 
-def create(request, lawyer_id):
+def create(request,):
     if request.method == 'GET':
         form = EditorForm()
-        return render(request=request, template_name='create.html', context={ 'form': form, 'id': lawyer_id })
+        return render(request=request, template_name='create.html', context={ 'form': form })
 
     if request.method == 'POST':
         form = EditorForm(request.POST)
