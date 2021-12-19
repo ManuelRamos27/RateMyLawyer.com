@@ -17,7 +17,7 @@ class EditorForm(forms.Form):
     choices = []
     for specialty in Specialty.objects.all():
         choices.append((specialty.specialty_id, specialty.name))
-    specialties = forms.MultipleChoiceField(label = "specialties", choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
+    specialties = forms.MultipleChoiceField(label = "Specialties: Select the appropriate specialty below", choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
 
 class CommentForm(forms.ModelForm):
 

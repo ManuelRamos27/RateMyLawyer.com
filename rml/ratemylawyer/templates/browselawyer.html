@@ -43,12 +43,16 @@
         <a href="{% url 'browse' %}">Browse Reviews</a>   
         <a href="{% url 'create' %}">Create Review</a>   
     </div>
+    <hr>
 </center>
 
  <body style="background-color:rgba(244, 123, 135, 0.224);">
  
 
 {% for review in reviews %}
+<center> <button type="button" style = "background-color:rgb(255, 255, 255); width:150px; height:50px; border-radius: 20px; font-size: 15px;">
+    <a href="{% url 'edit' review.lawyer_id %}">Edit This Review</a>
+</button></center>
         <div style=" text-align: center; padding: 32px 0px">
             <div style = "display: inline-block; text-align: left;">
                 <h2>Name: {{ review.name }}</h2>
@@ -63,29 +67,19 @@
         <div>
             <H2>Specialties</H2>
             {% for specialty in review.specialties.all %}
-            <span
+            <span 
                 style="color: rgb(255, 255, 255); background-color: rgb(54, 54, 54); margin-right: 4px"
                 >{{ specialty.name }}</span
             >
             {% endfor %}   
+            
         </div>
         <br>
-        <a href="{% url 'edit' review.lawyer_id %}">Click here to edit this review</a>
-        <h2>Comments...</h2>    
+       
+       
+        <hr> 
     {% endfor %}
 
-{% if not post.comments.all %}
-    No Comments Yet... <a href="#">Add One</a>
-{% else %}
-    {% for comment in post.comments.all %}
-        <strong>
-            {{ comment.author }} -
-            {{ comment.created_date }}
-        </strong>
-        <br/>
-        {{ comment.text }}
-    {% endfor %}
-{% endif %}
 
 </body>
 </html>
