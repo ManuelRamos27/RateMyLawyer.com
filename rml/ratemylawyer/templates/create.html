@@ -70,11 +70,10 @@
     </div>
 
 <!-- <ul id=""> -->
-    <ul> <textarea name="Id_specialties" id="Id_specialties" cols="50" rows="19"></textarea></ul>
+    <!--<ul> <textarea name="Id_specialties" id="Id_specialties" cols="50" rows="19"></textarea></ul> -->
     <form action="{% url 'create' %}" method="POST">
         {% csrf_token %} {{ form }}
         <input type="submit" name="create" value="Create" />
-        <!-- <input type="submit" name="delete" value="  Delete    " /> -->
     </form>
 
 </center>

@@ -37,38 +37,34 @@
 <center>    <h1>Browse Lawyer</h1>
 
     <div class="container">
-        <a href="{% url 'main' %}">Home</a>
-        <a href="{% url 'media' %}">Media Page</a>
-        <a href="{% url 'contact' %}">Contact Page</a>
-        <a href="{% url 'browse' %}">Browse Reviews</a>
-        <a href="{% url 'create' %}">Create Review</a>
+        <a href="{% url 'main' %}">Home</a>   
+        <a href="{% url 'media' %}">Media Page</a>   
+        <a href="{% url 'contact' %}">Contact Page</a>   
+        <a href="{% url 'browse' %}">Browse Reviews</a>   
+        <a href="{% url 'create' %}">Create Review</a>   
     </div>
 </center>
-    <form action="browselawyer.php" method="post">
-        <label for="">Lawyer Name</label>
-        <input type="text" name="lawyers_name">
-        <input type="submit" value="Search">
-    </form>
 
  <body style="background-color:rgba(244, 123, 135, 0.224);">
  
 
-    {% for review in reviews %}
-    <center>
-    <div style="padding: 32px 0px">
-        <h2>Name: {{ review.name }}</h2>
-        <p>Address: {{ review.address }}</p>
-        <p>Phone: {{ review.phone }}</p>
-        <p>Email: {{ review.email }}</p>
-        <p>License: {{ review.license }}</p>
-        <p>Website: {{ review.website}}</p>
-        <p>Rating:{{ review.rating }}</p>
-        <p>Cost: {{ review.cost }}</p>
+{% for review in reviews %}
+        <div style=" text-align: center; padding: 32px 0px">
+            <div style = "display: inline-block; text-align: left;">
+                <h2>Name: {{ review.name }}</h2>
+                <p><b>Address:</b> {{ review.address }}</p>
+                <p><b>Phone:</b> {{ review.phone }}</p>
+                <p><b>Email:</b> {{ review.email }}</p>
+                <p><b>License:</b> {{ review.license }}</p>
+                <p><b>Website:</b> {{ review.website}}</p>
+                <p><b>Rating:</b> {{ review.rating }}</p>
+                <p><b>Cost:</b> {{ review.cost }}</p>
+            </div>   
         <div>
             <H2>Specialties</H2>
             {% for specialty in review.specialties.all %}
             <span
-                style="color: black; background-color: lightblue; margin-right: 4px"
+                style="color: rgb(255, 255, 255); background-color: rgb(54, 54, 54); margin-right: 4px"
                 >{{ specialty.name }}</span
             >
             {% endfor %}   

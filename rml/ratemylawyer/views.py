@@ -40,7 +40,7 @@ def create(request,):
                 lawyer = Lawyer.objects.create(name=name, email=email, address=address, phone=phone, license=license, cost=cost, rating=rating, website=website)
                 # set cleaned tags to ManyRelatedManager object
                 lawyer.specialties.set(specialties)
-            submit = form.cleaned_data['browse']
+            #submit = form.cleaned_data['browse']
         return HttpResponseRedirect(reverse('browse'))
 
      
@@ -53,6 +53,7 @@ def contact(request):
 
 def edit(request, lawyer_id):
     if request.method == 'GET':
+        # get Lawyer object by it's lawyer_id
         post = Lawyer.objects.get(pk=lawyer_id)
         specialids = []
         for tag in post.specialties.all():
