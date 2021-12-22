@@ -2,6 +2,15 @@ from django.contrib import admin
 from .models import Lawyer, Specialty, Comment
 
 # Register your models here.
-admin.site.register(Lawyer)
+
+class CommentInline(admin.StackedInline):
+    model = Comment
+    extra = 0
+
+class PostAdmin(admin.ModelAdmin):
+    inlines = [
+        CommentInline,
+    ]
+
 admin.site.register(Specialty)
-admin.site.register(Comment)
+admin.site.register(Lawyer, PostAdmin)

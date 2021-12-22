@@ -1,5 +1,7 @@
-from django import forms
+from django import forms 
+from django.forms import ModelForm
 from .models import Lawyer
+from django.core.exceptions import ValidationError
 from .models import Specialty, Comment
 
 cost_choices = [('$','$'),('$$','$$'),('$$$','$$$'),('$$$$','$$$$')]
@@ -19,8 +21,13 @@ class EditorForm(forms.Form):
         choices.append((specialty.specialty_id, specialty.name))
     specialties = forms.MultipleChoiceField(label = "Specialties: Select the appropriate specialty below", choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
 
-class CommentForm(forms.ModelForm):
+class CommentForm(forms.Form):
+    author = forms.CharField(max_length=20)
+    text = forms.CharField(widget=forms.Textarea)
 
-    class Meta:
-        model = Comment
-        fields = ('author', 'text',)
+    def __str__(self):
+        return f"{self.text} by {self.author}"
+
+        
+
+    
