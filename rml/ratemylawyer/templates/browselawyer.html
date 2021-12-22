@@ -52,7 +52,11 @@
 {% for review in reviews %}
 <center> <button type="button" style = "background-color:rgb(255, 255, 255); width:150px; height:50px; border-radius: 20px; font-size: 15px;">
     <a href="{% url 'edit' review.lawyer_id %}">Edit This Review</a>
-</button></center>
+</button><br>
+<button type="button" style = "background-color:rgb(255, 255, 255); width:150px; height:50px; border-radius: 20px; font-size: 15px;">
+    <a href="{% url 'browse_comment' review.lawyer_id %}">See Comments for This Review</a>
+</button>
+</center>
         <div style=" text-align: center; padding: 32px 0px">
             <div style = "display: inline-block; text-align: left;">
                 <h2>Name: {{ review.name }}</h2>
@@ -72,7 +76,7 @@
                 >{{ specialty.name }}</span
             >
             {% endfor %}   
-            
+             
         </div>
         <br>
        

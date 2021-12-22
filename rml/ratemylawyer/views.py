@@ -1,5 +1,8 @@
+from django.core.exceptions import TooManyFieldsSent
+from django.http.response import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Lawyer
+from .models import Comment
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import EditorForm, CommentForm
@@ -87,17 +90,9 @@ def edit(request, lawyer_id):
 
 def media(request):
     return render(request, 'media.html')
-    pass
 
-def add_comment_to_post(request, lawyer_id):
-    post = get_object_or_404(Lawyer, lawyer_id = lawyer_id)
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('browse', lawyer_id=post.lawyer_id)
-    else:
-        form = CommentForm()
-    return render(request, 'add_comment_to_post.html', {'form': form})
+
+def browse_comment(request, lawyer_id):
+     comments = Lawyer.objects.get(pk=lawyer_id)
+     return render(request=request, template_name='browse_comment.html', context={ 'comments' : comments})
+
