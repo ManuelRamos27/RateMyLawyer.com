@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <title>Media</title>
-    <body style="background-color:rgba(244, 123, 135, 0.224);"></body>
-    <!-- <body img src="https://imgur.com/a/cOmQkW7" style="width:100px;height:100px;"> -->
+    <body style="background-color:rgba(244, 123, 135, 0.224);"></body> 
+    <style> 
+        html,
+        body{
+            margin: 0;
+        }
+        .banner {
+            background: rgb(191, 223, 228); 
+        }
+        .banner__content {
+            padding: 5px;
+            max-width: 1000;
+            margin: 0 auto; 
+            display: flex;
+            align-items: center;   
+        }
+        
+    
+    </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div class = "banner__content"></div>
+                <div class="banner__text"></div>
+    
+                  <h1> <center>Rate my Lawyer</center><h1>
+                    <h3><center>Get the law on your side! </center> </h3>
+        </div>
+    
+    
 <center>
-    <h1 style="font-size: 70px">Page is currently under construction</h1>>
+    
     <h1>Media</h1>  
      
     <div class="container">
@@ -29,36 +58,58 @@
     <br>
 
     <h2>News</h2>
-
+ 
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
+                    <img class="card"  src="{% static 'lawyer2.jpeg' %}" width="450" height="200"    alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h3 class="card-title">How to Find a Lawyer</h3>
+                        <div style=" text-align: center; padding: 32px 300px">
+                            <div style = "display: inline-block; text-align: center;">
+                            <p id="p3" class="card-text"> </p> Finding the right lawyer for you may seem like an overwhelming task, 
+                            but it doesn't have to be if you know what questions to ask.When you need to hire an attorney 
+                            for legal services, you want to be sure to hire the right person for your case. Most lawyers offer 
+                            a free consultation so that you have a chance to determine if he or she is the right person for you.
+                            Going to the first meeting with some simple questions can help you ensure you find the right person for 
+                            the legal help you need. You will not get much legal advice at this consult since it is not meant 
+                            to resolve your legal question, but is instead an opportunity to determine if you wish to hire this attorney</p>
+                        <a href="https://www.law.columbia.edu" class="btn btn-primary">Best Lawyers</a>
+                    <div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card"  src="https://tse3.mm.bing.net/th?id=OIP.5i8C98YuaCCAvdw6Wty-BAHaCs&pid=Api&P=0&" width="450" height="200" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Working with Your Attorney</h3>
+                        <p class="card-text">Another important component of selecting an attorney is finding out how the firm 
+                        will handle and manage your case. In large firms, it is common for other attorneys to work on the case,
+                        so the people actually doing the work on your case might not be the person you first meet with. 
+                        Most attorneys have paralegals or legal assistants who handle much of the paperwork and scheduling,
+                        so you will want to know who the contact person will be for your case. You should also find out how often
+                        you can expect to hear from the lawyer. If you have legal questions, how soon will you hear back if you 
+                        call or email? How often will the lawyer or firm reach out to you with updates? What do you do if something
+                        comes up after hours? What information and material do you need to supply to the attorney to make the case go smoothly?.</p>
+                    <a href="https://www.law.columbia.edu" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
+                    <img class="card"  src="https://tse1.mm.bing.net/th?id=OIP.S-QT0bW49ohRjXvXQJm65AAAAA&pid=Api&P=0&" width="450" height="200" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/XqQZQZL.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h3 class="card-title">The Legal Plan</h3>
+                        <p>  An important question to ask a lawyer is what the strategy for your 
+                            case will be and the outcome the lawyer expects. You will want to get details on what kind 
+                            of procedures to expect. Ask how long it will take for the entire case to be resolved. 
+                            Discuss the legal strategies that will be used. Find out if your attorney will attempt to 
+                            settle and if mediation or arbitration are options. Think about the answers and if you are
+                             comfortable with them. Maybe you want to avoid a trial at all costs but your attorney really
+                              wants to just go to trial, or perhaps you have no intention of settling and want your day in court.
+                              It is important that your lawyers strategy lines up with your needs.</p>
+                        <a href="https://www.law.columbia.edu" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -68,12 +119,12 @@
 
     <br>
     <br>
-<center>
+    </center>
 <h2>Podcasts</h2>
 <p>Latest Podcast</p>
 
         <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://youtu.be/tdn_cJByZuM">
 
         </audio>
 
@@ -83,10 +134,11 @@
 <center>
 <h2>Videos</h2>
 <p>Latest Video</p>
+    <p4></p4>
 
-        <video width="320" height="240" controls>
-            <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
-        </video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tdn_cJByZuM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe src="https://youtu.be/o3WO_qUcf-M" width="560" height="325" frameborder="0" allowfullscreen></iframe> -->
+     
 
 <br>
 <br>
