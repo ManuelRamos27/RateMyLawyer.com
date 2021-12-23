@@ -12,5 +12,6 @@ class PostAdmin(admin.ModelAdmin):
         CommentInline,
     ]
 
+# Registering the models
 admin.site.register(Specialty)
 admin.site.register(Lawyer, PostAdmin)

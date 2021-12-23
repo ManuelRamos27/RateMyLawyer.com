@@ -3,10 +3,12 @@ from django.utils import timezone
 
 # Create your models here.
 
+# Specialty model with a many-to-many relationship to lawyer
 class Specialty(models.Model):
     specialty_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
 
+# Lawyer model for each specific lawyer review
 class Lawyer(models.Model):
     lawyer_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -22,6 +24,8 @@ class Lawyer(models.Model):
     def __str__(self):
         return self.name
         
+
+# Comment model with a one-to-many relationship with Lawyer
 class Comment(models.Model):
     post = models.ForeignKey(Lawyer, on_delete=models.CASCADE, related_name='display_comment')
     author = models.CharField(max_length=200)

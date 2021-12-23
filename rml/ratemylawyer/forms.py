@@ -4,10 +4,12 @@ from .models import Lawyer
 from django.core.exceptions import ValidationError
 from .models import Specialty, Comment
 
+# Creating lists to be used as options for cost and ratings
 cost_choices = [('$','$'),('$$','$$'),('$$$','$$$'),('$$$$','$$$$')]
 star_choices = [('*','*'),('**','**',),('***','***'),('****','****'),('*****','*****')]
 
-class EditorForm(forms.Form):
+# Creating form for individual lawyer reviews
+class LawyerForm(forms.Form):
     name = forms.CharField(max_length=255, required=True)
     address = forms.CharField(max_length=255, required=True)
     phone = forms.CharField(max_length=255, required=True)
@@ -21,6 +23,7 @@ class EditorForm(forms.Form):
         choices.append((specialty.specialty_id, specialty.name))
     specialties = forms.MultipleChoiceField(label = "Specialties: Select the appropriate specialty below", choices=choices, widget=forms.CheckboxSelectMultiple, required=True)
 
+# Comment Form to be used to create new comments once functionable
 class CommentForm(forms.Form):
     author = forms.CharField(max_length=20)
     text = forms.CharField(widget=forms.Textarea)
