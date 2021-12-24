@@ -1,4 +1,4 @@
-![banner](rml\ratemylawyer\static\imgs\Adobe)
+![banner](rml\ratemylawyer\static\imgs\Adobe.jpg)
 
 Authors: [Mannuel Ramos](https://github.com/Manny2trill) , [Kelvin Melgar](https://github.com/KelvinMelgar2020) and [Brain Stern](https://github.com/sterno2510) 
 
