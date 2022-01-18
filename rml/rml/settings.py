@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'wihtenoise.middleware.WhitenoiseMiddleware',
+    'wihtenoise.middleware.WhitenoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'rml.urls'
@@ -139,4 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATICFILES_STORAGE = 'whitenoisestorage.Compressed.ManifestStaticFilesStorage'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
