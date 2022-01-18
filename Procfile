@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn demo.wsgi
+web: python /rml/manage.py migrate
