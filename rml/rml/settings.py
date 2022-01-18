@@ -25,8 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY'] 'django-insecure-5wjsl_$-gft%8phqcw@fz94_!$lf8%oao+wtmo==3(p(r4nsht'
+SECRET_KEY = 'django-insecure-5wjsl_$-gft%8phqcw@fz94_!$lf8%oao+wtmo==3(p(r4nsht'
 
+# SECRET_KEY = os.environ['SECRET_KEY']/"o=4ue9=bjz5)9$$i7v^=k%&!w9z21((cz#h8p4#e)#5e-g7uc^"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -56,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'wihtenoise.middleware.WhitenoiseMiddleware',
+    # 'wihtenoise.middleware.WhitenoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'rml.urls'
@@ -136,6 +137,6 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-STATICFILES_STORAGE = 'whitenoisestorage.Compressed.ManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoisestorage.Compressed.ManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
