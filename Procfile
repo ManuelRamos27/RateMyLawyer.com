@@ -1,2 +1,2 @@
-web: python /rml/manage.py migrate
+web: python /rml/manage.py runserver
 web: gunicorn myproject.wsgi
