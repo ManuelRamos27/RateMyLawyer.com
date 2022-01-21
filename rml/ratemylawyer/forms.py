@@ -10,12 +10,21 @@ star_choices = [('*','*'),('**','**',),('***','***'),('****','****'),('*****','*
 
 # Creating form for individual lawyer reviews
 class LawyerForm(forms.Form):
-    name = forms.CharField(max_length=255, required=True)
-    address = forms.CharField(max_length=255, required=True)
-    phone = forms.CharField(max_length=255, required=True)
-    email = forms.EmailField(max_length=255, required=True)
-    license = forms.CharField(max_length=255, required=True)
-    website = forms.URLField(max_length=200)
+   
+    Lawyers_Name = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Matthew Marinez'}))
+    Lawyers_Adrres= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'123 Main St. Los Angeles, CA 90012'}))
+    Lawyers_Phone_Number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'(123) 456-7890'}))
+    Lawyers_Emails = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'MatthewMartinez@law.com'}))
+    Lawyers_License_Number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'(123) 456-789'}))
+    Lawyers_Website= forms.CharField( widget=forms.TextInput(attrs={'placeholder':'www.matthewmartinez.com'}))
+    # Lawyers_Rating = forms.ChoiceField(choices=star_choices, widget=forms.Select(attrs={'class':'form-control'} ))
+    # Lawyers_Cost = forms.ChoiceField(choices=star_choices, widget=forms.Select(attrs={'class':'form-control'} ))
+    # name = forms.CharField(max_length=255, required=True)
+    # address = forms.CharField(max_length=255, required=True)
+    # phone = forms.CharField(max_length=255, required=True)_
+    # email = forms.EmailField(max_length=255, required=True)
+    # license = forms.CharField(max_length=255, required=True)
+    # website = forms.URLField(max_length=200)
     rating = forms.CharField(label='How many stars would you give this lawyer?', widget=forms.Select(choices=star_choices))
     cost = forms.CharField(label='How would you classify cost?', widget=forms.Select(choices=cost_choices))
     choices = []

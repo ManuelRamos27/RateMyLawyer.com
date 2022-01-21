@@ -1,49 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
     {% load static %}
-   <style>
+    <style>
         html,
-        body{
+        body {
             margin: 0;
         }
+
         .banner {
-            background: rgb(191, 223, 228); 
+            background: rgb(191, 223, 228);
         }
+
         .banner__content {
             padding: 5px;
             max-width: 1000;
-            margin: 0 auto; 
+            margin: 0 auto;
             display: flex;
-            align-items: center;   
+            align-items: center;
         }
+
         ul {
             list-style-type: none;
-        
+
         }
+
+        
+
     </style>
-    <head>
-    
-<div class="banner">
- <div class = "banner__content"></div>
-<div class="banner__text"></div>
-    
- <h1> <center>Rate my Lawyer</center><h1>
-<h3><center>Get the law on your side! </center> </h3>
-</div>
-    <title>Create Review</title>
+
+    <title>Create</title>
+
+        <div class="banner">
+            <div class="banner__content"></div>
+            <div class="banner__text"></div>
+
+            <h1><center>Rate my Lawyer</center></h1>
+                    <h3>
+                        <center>Get the law on your side! </center>
+                    </h3>
+                    <div></div>
+                    <title>Create Review</title>
+        </div>
+
     <body style="background-color:rgba(244, 123, 135, 0.224);"></body>
-<!-- <head>
-<!-- <body id="bg"background-image:url ('{% static 'imgs/lwyr3.png'%}'); --> 
+    
 
 <body>
     <!-- <div class="background: no-repeat center center fixed:cover;">  -->
     <style>
-        
         input[type='text'],
         input[type='url'],
         input[type='email'],
@@ -56,26 +66,33 @@
             width: 35%;
         }
     </style>
+    
 
 
     <center>
-    <h1>Create Lawyer Review</h1>
-    <div class="container">
-        <a href="{% url 'main' %}">Home</a>
-        <a href="{% url 'media' %}">Media Page</a>
-        <a href="{% url 'contact' %}">Contact Page</a>
-        <a href="{% url 'browse' %}">Browse Reviews</a>
-        <a href="{% url 'create' %}">Create Review</a>
-        <!-- <a href="/edit/1">Edit Review</a> -->
-    </div>
+        <h1>Create Lawyer Review</h1>
+        <br>
+        <br>
+        <div class="container">
+            <a href="{% url 'main' %}">Home</a>
+            <a href="{% url 'media' %}">Media Page</a> 
+            <a href="{% url 'contact' %}">Contact Page</a>
+            <a href="{% url 'browse' %}">Browse Reviews</a>
+            <a href="{% url 'create' %}">Create Review</a>
+            <div>
+                <textarea name="message" class="form-control mb-150" maxlength="250" placeholder="Write your Review"></textarea>
+            </div>
+            <!-- <a href="/edit/1">Edit Review</a> -->
+        </div>
+        
 
-<!-- <ul id=""> -->
-    <!--<ul> <textarea name="Id_specialties" id="Id_specialties" cols="50" rows="19"></textarea></ul> -->
-    <form action="{% url 'create' %}" method="POST">
-        {% csrf_token %} {{ form }}
-        <input type="submit" name="create" value="Create" />
-    </form>
+        <!-- <ul id=""> -->
+        <!--<ul> <textarea name="Id_specialties" id="Id_specialties" cols="50" rows="19"></textarea></ul> -->
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %} {{ form }}
+            <input type="submit" name="create" value="Create" />
+        </form>
 
-</center>
-<label>
-</label>                    
+
+    </center>
+</body>

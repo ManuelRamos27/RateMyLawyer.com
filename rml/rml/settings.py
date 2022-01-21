@@ -11,23 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
-import os
-import dj_database_url
-import django_heroku
-
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,14 +22,10 @@ STATICFILES_DIRS = (
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-5wjsl_$-gft%8phqcw@fz94_!$lf8%oao+wtmo==3(p(r4nsht'
 
-# SECRET_KEY = os.environ['SECRET_KEY']/"o=4ue9=bjz5)9$$i7v^=k%&!w9z21((cz#h8p4#e)#5e-g7uc^"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if not DEBUG:
-    ALLOWED_HOSTS = ['randomly-generated-app-1991.herokuapp.com']
-else:
-    ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -66,7 +48,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'wihtenoise.middleware.WhitenoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'rml.urls'
@@ -97,7 +78,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'default': dj_database_url.config(conn_max_age=600)
     }
 }
 
@@ -144,11 +124,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-STATICFILES_STORAGE = 'whitenoisestorage.Compressed.ManifestStaticFilesStorage'
-
-django_heroku.settings(locals())
-
-STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
-

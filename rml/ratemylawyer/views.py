@@ -36,7 +36,7 @@ def create(request,):
             # if form was submitted by clicking create
             if 'create' in request.POST:
                 # get cleaned data from form
-                name = form.cleaned_data['name']
+                name = form.cleaned_data['name', ]
                 email = form.cleaned_data['email']
                 address = form.cleaned_data['address']
                 phone = form.cleaned_data['phone']
@@ -49,8 +49,8 @@ def create(request,):
                 lawyer = Lawyer.objects.create(name=name, email=email, address=address, phone=phone, license=license, cost=cost, rating=rating, website=website)
                 # set cleaned specialties to ManyRelatedManager object
                 lawyer.specialties.set(specialties)
+             
         return HttpResponseRedirect(reverse('browse'))
-
      
 # view for contact page    
 def contact(request):
@@ -109,4 +109,5 @@ def browse_comment(request, lawyer_id):
     # get Lawyer object by it's lawyer_id
      comments = Lawyer.objects.get(pk=lawyer_id)
      return render(request=request, template_name='browse_comment.html', context={ 'comments' : comments})
+
 
